@@ -1,10 +1,16 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
+import { Link } from "@nextui-org/link";
+import Image from "next/image";
+import { SiLinkfire, SiJuejin, SiXiaohongshu } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
 import clsx from "clsx";
 
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { Providers } from "./providers";
 
+import { siteConfig } from "@/config/site";
+import { ThemeSwitch } from "@/components/theme-switch";
+import { fontSans } from "@/config/fonts";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -37,26 +43,52 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <main>{children}</main>
-        {/* <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
-              </Link>
+            <div className="flex justify-between p-4">
+              <div className="flex items-center gap-2">
+                <SiLinkfire className="text-4xl text-primary" />
+                <h1 className="text-2xl font-bold ">Link View</h1>
+              </div>
+              <ThemeSwitch />
+            </div>
+            <hr className="w-full my-2" />
+            <main className="container mx-auto max-w-7xl ">{children}</main>
+            <footer className="w-full flex flex-col items-center justify-center py-2 px-5">
+              <div className="flex items-center gap-5">
+                <Link href="https://github.com/cjy1998">
+                  <FaGithub className="text-2xl" />
+                </Link>
+                <Link href="https://juejin.cn/user/3751955760443165">
+                  <SiJuejin className="text-2xl" />
+                </Link>
+                <Link href="https://www.xiaohongshu.com/user/profile/650daafd00000000170200d3">
+                  <SiXiaohongshu className="text-2xl" />
+                </Link>
+                <Link href="https://cjy1998.github.io/vitepress/">
+                  <Image
+                    alt="个人博客"
+                    height={15}
+                    src="/blog.png"
+                    width={15}
+                  />
+                </Link>
+              </div>
+              <hr className="w-full my-2" />
+              <div className="flex items-center">
+                <Link
+                  isExternal
+                  className="flex items-center gap-1 text-current"
+                  href="https://portfolio-website-smoky-one-44.vercel.app/"
+                  title="nextui.org homepage"
+                >
+                  <span className="text-default-600">Copyright © 2024</span>
+                  <p className="text-primary">Jian Chen</p>
+                </Link>
+              </div>
             </footer>
           </div>
-        </Providers> */}
+        </Providers>
       </body>
     </html>
   );
