@@ -1,8 +1,11 @@
 # LinkView
 
-> 一个用于管理和收藏个人网站导航的应用
+<img src="https://img.icons8.com/ios-filled/50/000000/china.png" alt="中文" />
+<img src="https://img.icons8.com/ios-filled/50/000000/usa.png" alt="English" />
 
-LinkView 是一个网站导航应用，可以帮助用户收藏和分类管理自己喜欢的链接。该项目基于 **Next.js 14**、**Tailwind CSS**、**Vercel**、**PostgreSQL** 和 **Sentry**。使用 npm 作为包管理器，项目提供了简洁高效的用户体验。
+> 一个用于管理和收藏个人网站导航的平台
+
+LinkView 是一个创新的网站导航平台。它允许用户轻松地收藏自己喜欢的网址并进行分类。它使用 Next.js 构建，能提供流畅且高效的用户体验。该应用程序的设计注重简洁性和功能性，使用户能够快速访问和管理他们收藏的网站。有了 LinkView，整理你的网络世界从未如此便捷。
 
 ## 技术栈
 
@@ -61,12 +64,12 @@ LinkView 是一个网站导航应用，可以帮助用户收藏和分类管理�
 欢迎提交 PR 贡献代码，帮助我们一起优化 LinkView。
 
 ---
-
+<a id="english"></a>English
 # LinkView
 
 > A personalized web link manager for easy categorization and access
 
-LinkView is a web link navigation tool that helps users store and organize their favorite links by categories. Built on **Next.js 14**, **Tailwind CSS**, **Vercel**, **PostgreSQL**, and **Sentry** with npm as the package manager, LinkView delivers a streamlined and efficient user experience.
+LinkView is an innovative website navigation platform. It allows users to collect and categorize their favorite web addresses with ease. Built with Next.js, it offers a seamless and efficient user experience. The application's design focuses on simplicity and functionality, enabling users to quickly access and manage their bookmarked websites. With LinkView, organizing your online world has never been more convenient.
 
 ## Tech Stack
 
