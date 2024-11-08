@@ -16,11 +16,8 @@ const ForgotPasswordForm = () => {
     setStep(2);
   };
 
-  const handleVerifyCode = (e: React.FormEvent) => {
+  const handleVerifyCode = () => {
     // e.preventDefault();
-    console.log("====================================");
-    console.log("handleVerifyCode");
-    console.log("====================================");
     setIsLoading(true);
     // TODO: 验证验证码
     setTimeout(() => {
