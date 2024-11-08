@@ -3,10 +3,10 @@ import Image from "next/image";
 import LoginForm from "@/components/login-form";
 export default function LoginPage() {
   return (
-    <div className="flex md:flex-row flex-col  min-h-[calc(100vh-170px)] gap-0 p-5">
+    <div className="flex min-h-[calc(100vh-170px)] flex-col gap-0 p-5 md:flex-row">
       <Image
         alt="login"
-        className="md:hidden p-5 h-[390px] w-auto"
+        className="h-[390px] w-auto p-5 md:hidden"
         height={100}
         src="/loginArt.png"
         width={345}
@@ -17,7 +17,7 @@ export default function LoginPage() {
 
       <Image
         alt="login"
-        className="hidden md:block h-[590px] w-auto flex-1 object-contain"
+        className="hidden h-[590px] w-auto flex-1 object-contain md:block"
         height={300}
         src="/loginArt.png"
         width={200}

@@ -11,6 +11,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { fontSans } from "@/config/fonts";
+import LoginButton from "@/components/login-button";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -44,17 +45,20 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <div className="flex justify-between p-4">
+          <div className="relative flex h-screen flex-col">
+            <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-2">
                 <SiLinkfire className="text-4xl text-primary" />
-                <h1 className="text-2xl font-bold ">Link View</h1>
+                <h1 className="text-2xl font-bold">Link View</h1>
               </div>
-              <ThemeSwitch />
+              <div className="flex items-center gap-3">
+                <ThemeSwitch />
+                <LoginButton />
+              </div>
             </div>
-            <hr className="w-full my-2" />
-            <main className="container mx-auto max-w-7xl ">{children}</main>
-            <footer className="w-full flex flex-col items-center justify-center py-2 px-5">
+            <hr className="my-2 w-full" />
+            <main className="container mx-auto max-w-7xl">{children}</main>
+            <footer className="flex w-full flex-col items-center justify-center px-5 py-2">
               <div className="flex items-center gap-5">
                 <Link href="https://github.com/cjy1998">
                   <FaGithub className="text-2xl" />
@@ -74,7 +78,7 @@ export default function RootLayout({
                   />
                 </Link>
               </div>
-              <hr className="w-full my-2" />
+              <hr className="my-2 w-full" />
               <div className="flex items-center">
                 <Link
                   isExternal
