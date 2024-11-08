@@ -1,10 +1,23 @@
+"use client";
+
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import Link from "next/link";
 import { FaHandsClapping } from "react-icons/fa6";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { IoLogoWechat } from "react-icons/io5";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  useDisclosure,
+} from "@nextui-org/modal";
+
+import ForgotPasswordForm from "./forgot-password-form";
 export default function LoginForm() {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <div className="mx-auto w-full max-w-md">
       <div className="mb-5 flex items-center gap-2">
@@ -27,12 +40,11 @@ export default function LoginForm() {
           type="password"
         />
 
-        <Link
-          className="flex w-full justify-end gap-1 p-4"
-          href="/forgot-password"
-        >
-          <p className="text-primary">忘记密码？ </p>
-        </Link>
+        <div className="flex w-full justify-end gap-1 p-4">
+          <p className="cursor-pointer text-primary" onClick={onOpen}>
+            忘记密码？{" "}
+          </p>
+        </div>
         <Button className="w-full" color="primary" variant="shadow">
           登录
         </Button>
@@ -69,6 +81,20 @@ export default function LoginForm() {
           </Link>
         </div>
       </form>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                找回密码
+              </ModalHeader>
+              <ModalBody className="py-8">
+                <ForgotPasswordForm />
+              </ModalBody>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </div>
   );
 }
