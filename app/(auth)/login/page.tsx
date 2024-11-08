@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { Metadata } from "next";
 
 import LoginForm from "@/components/login-form";
+export const metadata: Metadata = {
+  title: "登录",
+};
 export default function LoginPage() {
   return (
     <div className="flex min-h-[calc(100vh-170px)] flex-col gap-0 p-5 md:flex-row">

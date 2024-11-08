@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "LinkView",
+  description: "它允许用户轻松地收藏自己喜欢的网址并进行分类.",
   navItems: [
     {
       label: "Home",
