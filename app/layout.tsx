@@ -47,9 +47,14 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex h-screen flex-col">
             <div className="flex items-center justify-between p-4">
-              <div className="flex items-center gap-2">
-                <SiLinkfire className="text-4xl text-primary" />
-                <h1 className="text-2xl font-bold">Link View</h1>
+              <div className="flex cursor-pointer items-center gap-2">
+                <Link
+                  className="flex cursor-pointer items-center gap-2"
+                  href="/"
+                >
+                  <SiLinkfire className="text-4xl text-primary" />
+                  <h1 className="text-2xl font-bold">LinkView</h1>
+                </Link>
               </div>
               <div className="flex items-center gap-3">
                 <ThemeSwitch />
