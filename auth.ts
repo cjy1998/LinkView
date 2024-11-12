@@ -26,7 +26,7 @@ export const { auth, signIn, signOut } = NextAuth({
   providers: [
     Credentials({
       // 登录验证逻辑
-      async authorize(credentials) {
+      async authorize(credentials: any) {
         // 前端校验数据格式
         const parsedCredentials = z
           .object({

@@ -1,12 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // experimental: {
-  //   turbo: {
-  //     rules: {
-  //       "*.html": ["ignore-loader"],
-  //     },
-  //   },
-  // },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;

@@ -12,6 +12,9 @@ import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { fontSans } from "@/config/fonts";
 import LoginButton from "@/components/login-button";
+import { auth } from "@/auth";
+import ExitButton from "@/components/exit-button";
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -30,12 +33,17 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // 获取登录状态和用户信息
+  const session = await auth();
+  const isLoggedIn = !!session?.user;
+
   return (
+    // const isLoggedIn = !!auth?.user
     <html suppressHydrationWarning lang="en">
       <head />
       <body
@@ -46,7 +54,7 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex h-screen flex-col">
-            <div className="flex items-center justify-between p-4">
+            <div className="flex items-center justify-between px-6 py-4">
               <div className="flex cursor-pointer items-center gap-2">
                 <Link
                   className="flex cursor-pointer items-center gap-2"
@@ -56,9 +64,13 @@ export default function RootLayout({
                   <h1 className="text-2xl font-bold">LinkView</h1>
                 </Link>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <ThemeSwitch />
-                <LoginButton />
+                {!isLoggedIn && <LoginButton />}
+                {/* 根据登录状态显示头像 */}
+                {isLoggedIn && (
+                  <ExitButton name={session?.user?.name || "User"} />
+                )}
               </div>
             </div>
             <hr className="my-2 w-full" />
