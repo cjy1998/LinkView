@@ -41,7 +41,7 @@ export default function LoginForm() {
 
     data.append("email", formData.email);
     data.append("password", formData.password);
-
+    // data.append("callbackUrl", "/list");
     // 调用你的 authenticate 函数
     const result = await authenticate(null, data);
   }

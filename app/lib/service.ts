@@ -6,7 +6,7 @@ import { signIn } from "@/auth";
 
 export const authenticate = async (prevState: any, formData: FormData) => {
     try {
-        await signIn("credentials", formData);
+        await signIn("credentials", formData, { redirectTo: "/list" });
     } catch (error) {
         if (error instanceof AuthError) {
             switch (error.type) {

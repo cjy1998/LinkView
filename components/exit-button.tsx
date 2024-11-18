@@ -17,7 +17,7 @@ const ExitButton = ({ name }: { name: string }) => {
           <form
             action={async () => {
               "use server";
-              await signOut();
+              await signOut({ redirectTo: "/" });
             }}
           >
             <Button

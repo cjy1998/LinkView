@@ -74,7 +74,7 @@ export default async function RootLayout({
               </div>
             </div>
             <hr className="my-2 w-full" />
-            <main className="container mx-auto max-w-7xl">{children}</main>
+            <main className="container mx-auto">{children}</main>
             <footer className="flex w-full flex-col items-center justify-center px-5 py-2">
               <div className="flex items-center gap-5">
                 <Link href="https://github.com/cjy1998">
